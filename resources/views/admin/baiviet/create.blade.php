@@ -58,7 +58,12 @@
                                         <input type="text" name="NgayDang" class="form-control" placeholder="Ngày Đăng">
                                     </div>
                                 </div>
-                            
+                                <div class="col-md-5 pr-1">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Tác Giả</label>
+                                        <input type="text" name="TacGia" class="form-control" placeholder="Tác Giả">
+                                    </div>
+                                </div>
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Trạng Thái</label>

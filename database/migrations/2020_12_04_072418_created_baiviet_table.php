@@ -19,12 +19,13 @@ class CreatedBaivietTable extends Migration
             $table->string('TieuDe')->nullable();
             $table->integer('DanhMuc')->unsigned()->nullable();
             $table->foreign('DanhMuc')->references('id')->on('danhmuc');
-            $table->string('MoTa')->nullable();
-            $table->text('NoiDung')->nullable();
-            $table->string('HinhAnh')->nullable();
-            $table->string('TieuDeHinhAnh')->nullable();
-            $table->string('NgayDang')->nullable();
-            $table->Integer('TrangThai')->nullable();
+            $table->string('MoTa');
+            $table->text('NoiDung');
+            $table->string('HinhAnh');
+            $table->string('TieuDeHinhAnh');
+            $table->string('NgayDang');
+            $table->string('TacGia');
+            $table->Integer('TrangThai');
             $table->timestamps();
             
         });

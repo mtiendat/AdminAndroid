@@ -58,6 +58,7 @@ class  BaiVietController extends Controller
         'HinhAnh'=>'required',
         'TieuDeHinhAnh'=>'required',
         'NgayDang'=>'required',
+        'TacGia'=>'required',
         'TrangThai'=>'required',
         ]);
         $baiviet->TieuDe=$request->TieuDe;
@@ -67,6 +68,7 @@ class  BaiVietController extends Controller
         $baiviet->TieuDeHinhAnh=$request->TieuDeHinhAnh;
         $baiviet->HinhAnh=$this->imageUpload($request);
         $baiviet->NgayDang=$request->NgayDang;
+        $baiviet->TacGia=$request->TacGia;
         $baiviet->TrangThai=$request->TrangThai;
         //if(Category::create($request->all()))
         if($baiviet->save())
@@ -101,6 +103,7 @@ class  BaiVietController extends Controller
         'HinhAnh'=>'required',
         'TieuDeHinhAnh'=>'required',
         'NgayDang'=>'required',
+        'TacGia'=>'required',
         'TrangThai'=>'required',
         ]);    
         
@@ -130,7 +133,6 @@ class  BaiVietController extends Controller
         $dem =count($baiviets);
         for($i=0;$i<$dem;$i++)
          $baiviets[$i]->HinhAnh="http://10.0.2.2:8000/image/".$baiviets[$i]->HinhAnh;
-        
         return response()->json([
     		'data' => $baiviets
     	]);

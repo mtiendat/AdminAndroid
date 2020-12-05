@@ -19,7 +19,7 @@
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label>Danh Mục </label>
-                                        <input type="text" class="form-control" name="DanhMuc" values="{{$baiviet->DanhMuc}} >
+                                        <input type="text" class="form-control" name="DanhMuc" values="{{$baiviet->DanhMuc}}" />
                                     </div>
                                 </div>
                                 <div class="col-md-5 pr-1">
@@ -58,7 +58,12 @@
                                         <input type="text" name="NgayDang" class="form-control" values="{{$baiviet->NgayDang}}">
                                     </div>
                                 </div>
-                            
+                                <div class="col-md-5 pr-1">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Tác Giả</label>
+                                        <input type="text" name="TacGia" class="form-control" values="{{$baiviet->TacGia}}">
+                                    </div>
+                                </div>
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Trạng Thái</label>

@@ -22,6 +22,7 @@
                                         <th>Hình Ảnh</th>
                                         <th>Tiêu Đề Hình Ảnh</th>
                                         <th> Ngày Đăng</th>
+                                        <th> Tác giả</th>
                                         <th> Trạng Thái</th>
                                         <th width="70%">Tùy chọn</th>
                                     </tr>
@@ -37,7 +38,7 @@
                                             <td><img class="img-thumbnail" src="{{asset('image/'.$baiviet->HinhAnh)}}"></td>
                                             <td style="text-align:center">{{$baiviet->TieuDeHinhAnh}}</td>
                                             <td style="text-align:center">{{$baiviet->NgayDang}}</td>
-   
+                                            <td style="text-align:center">{{$baiviet->TacGia}}</td>
                                             <td style="text-align:center">{{$baiviet->TrangThai}}</td>
                                             <td>
                                             <form action="{{route('baiviet.destroy', $baiviet->id)}}" method="POST">

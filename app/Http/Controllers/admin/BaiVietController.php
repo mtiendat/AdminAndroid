@@ -137,4 +137,11 @@ class  BaiVietController extends Controller
     		'data' => $baiviets
     	]);
     }
+    public function layBaiVietID(Request $request){
+        $baiviets = BaiViet::where('id',$request->id)->get();
+        $baiviets[0]->HinhAnh="http://10.0.2.2:8000/image/".$baiviets[0]->HinhAnh;
+        return response()->json([
+    		'data' => $baiviets
+    	]);
+    }
 }

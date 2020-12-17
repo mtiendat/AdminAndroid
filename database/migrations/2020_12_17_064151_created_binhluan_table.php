@@ -18,6 +18,7 @@ class CreatedBinhluanTable extends Migration
             $table->increments('id')->unsigned();
             $table->string('id_user');
             $table->foreign('id_user')->references('username')->on('user');
+            $table->string('name');
             $table->integer('id_baiviet')->unsigned();
             $table->foreign('id_baiviet')->references('id')->on('baiviet');
             $table->string('noidung');

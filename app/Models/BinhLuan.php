@@ -12,6 +12,7 @@ class BinhLuan extends Model
     protected $fillable =[
         'id',
         'id_user',
+        'name',
         'id_baiviet',
         'noidung',
         'trangthai',

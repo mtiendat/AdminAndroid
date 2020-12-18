@@ -144,4 +144,11 @@ class  BaiVietController extends Controller
     		'data' => $baiviets
     	]);
     }
+    public function layBinhLuan(Request $request)
+    {
+        $binhluan = BinhLuan::where('id_baiviet',$request->id)->get();
+        return response()->json([
+    		'data' => $binhluan
+    	]);
+    }
 }

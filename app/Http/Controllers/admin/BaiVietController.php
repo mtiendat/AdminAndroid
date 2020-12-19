@@ -105,10 +105,10 @@ class  BaiVietController extends Controller
         'NgayDang'=>'required',
         'TacGia'=>'required',
         'TrangThai'=>'required',
-        ]);    
-        
+        ]);
+
         $data['HinhAnh']=$this->imageUpload($request);
-        
+
         //if(Category::create($request->all()))
         if($baiviet->update($data))
         {
@@ -128,7 +128,6 @@ class  BaiVietController extends Controller
     }
     public function layDanhSach(Request $request)
     {
-   
         $baiviets = BaiViet::where('DanhMuc',$request->danhmuc)->get();
         $dem =count($baiviets);
         for($i=0;$i<$dem;$i++)

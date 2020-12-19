@@ -105,5 +105,12 @@ class UserController extends Controller
         return redirect()->route('user.index');
     }
 
-    
+
+
+    public function LayDanhSach(Request $request){
+        $users = User::where('username',$request->username)->get();
+        return response()->json([
+    		'data' =>$users
+    	]);
+        }
 }

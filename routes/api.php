@@ -21,3 +21,5 @@ Route::get('bai-viet','admin\BaiVietController@layDanhSach');
 Route::get('chitiet','admin\BaiVietController@layBaiVietID');
 Route::get('binhluan','admin\BaiVietController@layBinhLuan');
 Route::get('login','admin\UserController@layDanhSach');
+
+

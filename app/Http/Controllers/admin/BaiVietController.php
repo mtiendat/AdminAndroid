@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\DanhMuc;
 use Illuminate\Http\Request;
 use App\Models\BaiViet;
+use App\Models\BinhLuan;
 use Session;
 
 class  BaiVietController extends Controller

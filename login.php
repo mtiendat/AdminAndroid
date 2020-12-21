@@ -1,8 +1,5 @@
 <?php
-
-
 if ($_SERVER['REQUEST_METHOD']=='POST') {
-
     $email = $_POST['email'];
     $password = md5($_POST['password']);
     require_once 'connect.php';
@@ -11,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $response = mysqli_query($conn, $sql);
     $result = array();
     $result['login'] = array();
-    if ( mysqli_num_rows($response) === 1 ) { 
+    if ( mysqli_num_rows($response) === 1 ) {
         $row = mysqli_fetch_assoc($response);
         if ($password==$row['password'] ) {
             $index['name'] = $row['hoten'];

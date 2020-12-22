@@ -20,8 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('bai-viet','admin\BaiVietController@layDanhSach');
 Route::get('chitiet','admin\BaiVietController@layBaiVietID');
 Route::get('binhluan','admin\BaiVietController@layBinhLuan');
-Route::get('login','admin\UserController@layDanhSach');
-
 Route::post('dang-ky', 'API\UserController@dangKy');
-Route::get('test', 'API\UserController@test');
-
+Route::post('dang-nhap', 'API\UserController@dangNhap');

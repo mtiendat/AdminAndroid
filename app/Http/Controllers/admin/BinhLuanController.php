@@ -81,4 +81,11 @@ class BinhLuanController extends Controller
             Session::flash('message', 'Failure!');
         return redirect()->route('binhluan.index');
     }
+    public function layBinhLuan(Request $request)
+    {
+        $binhluan = BinhLuan::where('id_baiviet',$request->id_baiviet)->get();
+        return response()->json([
+    		'data' => $binhluan
+    	]);
+    }
 }

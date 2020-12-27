@@ -7,6 +7,7 @@ use App\Models\DanhMuc;
 use Illuminate\Http\Request;
 use App\Models\BaiViet;
 use App\Models\BinhLuan;
+use Illuminate\Support\Arr;
 use Session;
 
 class  BaiVietController extends Controller
@@ -140,9 +141,27 @@ class  BaiVietController extends Controller
     public function layBaiVietID(Request $request){
         $baiviets = BaiViet::where('id',$request->id)->get();
         $baiviets[0]->HinhAnh="http://10.0.2.2:8000/image/".$baiviets[0]->HinhAnh;
+        
+        return response()
+        ->json([
+    		'data' => $baiviets]);
+    }
+    public function dsTinDaXem(Request $request){
+    
+        $id=array();
+        for($i=0;$i<$request->size;$i++){
+            $s = "id".$i; //vì key truyền lên là:id0,id0,..;
+            array_push($id,$request->$s);//$request->s(s là key) lấy ra id truyền lên push vào mảng
+            
+        }
+        $baiviets=BaiViet::whereIn('id', $id)->get(); //truy vấn whereIn: lấy tất cả giá trị thuộc cột id, điều kiện là 1 mang [] id truyền vào
+        $dem =count($baiviets);
+        for($i=0;$i<$dem;$i++)
+         $baiviets[$i]->HinhAnh="http://10.0.2.2:8000/image/".$baiviets[$i]->HinhAnh;
         return response()->json([
     		'data' => $baiviets
     	]);
+       
     }
     
 }

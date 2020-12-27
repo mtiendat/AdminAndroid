@@ -33,7 +33,7 @@ class UserController extends Controller
     }
 
     public function dangNhap(Request $request) {
-        
+
         $user = User::where('email',$request->email)->get();
         if(empty($user)){
             return response()->json([
@@ -47,10 +47,12 @@ class UserController extends Controller
         ];
         if (Auth::attempt($login)) {
             $hoten = $user[0]->hoten;
+            $email = $user[0]->email;
             return response()->json([
             'status' => 'success',
             'message' => 'Đăng nhập thành công!',
             'hoten'=>$hoten,
+            'email'=>$email
              ]);
         }
         return response()->json([

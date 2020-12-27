@@ -23,4 +23,4 @@ Route::post('tin-da-xem','admin\BaiVietController@dsTinDaXem');
 Route::get('binhluan','admin\BinhLuanController@layBinhLuan');
 Route::post('dang-ky', 'API\UserController@dangKy');
 Route::post('dang-nhap', 'API\UserController@dangNhap');
-
+Route::post('timkiem', 'admin\BaiVietController@timkiem');

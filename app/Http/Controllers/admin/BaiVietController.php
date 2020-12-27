@@ -146,6 +146,14 @@ class  BaiVietController extends Controller
         ->json([
     		'data' => $baiviets]);
     }
+    public function timkiem(Request $request){
+        $tieude = BaiViet::where('TieuDe','like','%'.$request->TieuDe.'%')->get();
+        $tieude[0]->HinhAnh="http://10.0.2.2:8000/image/".$tieude[0]->HinhAnh;
+        
+        return response()
+        ->json([
+    		'data' => $tieude]);
+    }
     public function dsTinDaXem(Request $request){
     
         $id=array();

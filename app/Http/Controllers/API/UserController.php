@@ -6,14 +6,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Classes\Helper;
 use Auth;
+
 class UserController extends Controller
 {
     public function dangKy(Request $request) {
+        
         $password=Hash::make($request->password);
+        $avatar=Helper::imageUpload($request);
         $user = User::create([
             'username'  => $request->username,
             'password'  =>$password,
+            'anhdaidien' => $avatar,
             'hoten'     => $request->hoten,
             'diachi'    => $request->diachi,
             'sdt'       => $request->sdt,

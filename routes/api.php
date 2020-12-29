@@ -24,3 +24,4 @@ Route::get('binhluan','admin\BinhLuanController@layBinhLuan');
 Route::post('dang-ky', 'API\UserController@dangKy');
 Route::post('dang-nhap', 'API\UserController@dangNhap');
 Route::get('timkiem', 'admin\BaiVietController@timkiem');
+Route::post('upload-image', 'API\UserController@');

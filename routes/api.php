@@ -22,6 +22,7 @@ Route::get('chitiet','admin\BaiVietController@layBaiVietID');
 Route::post('tin-da-xem','admin\BaiVietController@dsTinDaXem');
 Route::get('binhluan','admin\BinhLuanController@layBinhLuan');
 Route::post('dang-ky', 'API\UserController@dangKy');
+Route::post('dang-binhluan', 'API\BinhLuanController@postBinhLuan');
 Route::post('dang-nhap', 'API\UserController@dangNhap');
 Route::get('timkiem', 'admin\BaiVietController@timkiem');
 Route::post('upload-image', 'API\UserController@');

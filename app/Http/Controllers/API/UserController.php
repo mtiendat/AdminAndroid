@@ -53,11 +53,13 @@ class UserController extends Controller
         if (Auth::attempt($login)) {
             $hoten = $user[0]->hoten;
             $email = $user[0]->email;
+            $user_name = $user[0]->username;
             return response()->json([
             'status' => 'success',
             'message' => 'Đăng nhập thành công!',
             'hoten'=>$hoten,
-            'email'=>$email
+            'email'=>$email,
+            'user_name'=>$user_name
              ]);
         }
         return response()->json([

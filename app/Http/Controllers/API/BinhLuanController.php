@@ -30,4 +30,10 @@ class BinhLuanController extends Controller
             'message' => 'Đăng thành công'
         ]);
     }
+    public function getBLbyID(Request $request){
+        $binhluan = BinhLuan::where('id_user',$request->id_user)->get();
+        return response()->json([
+    		'data' => $binhluan
+    	]);
+    }
 }

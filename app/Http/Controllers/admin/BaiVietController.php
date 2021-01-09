@@ -163,8 +163,8 @@ class  BaiVietController extends Controller
             
         }
         $baiviets=BaiViet::whereIn('id', $id)->get(); //truy vấn whereIn: lấy tất cả giá trị thuộc cột id, điều kiện là 1 mang [] id truyền vào
-        $dem =count($baiviets);
-        for($i=0;$i<$dem;$i++)
+  
+        for($i=0;$i<count($baiviets);$i++)
          $baiviets[$i]->HinhAnh="http://10.0.2.2:8000/image/".$baiviets[$i]->HinhAnh;
         return response()->json([
     		'data' => $baiviets

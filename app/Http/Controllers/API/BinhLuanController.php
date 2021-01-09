@@ -16,6 +16,7 @@ class BinhLuanController extends Controller
             'id_user'  => $request->id_user,
             'name'  =>$request->name,
             'id_baiviet' => $request->id_baiviet,
+            'anhdaidien'=>$request->anhdaidien,
             'noidung'     => $request->noidung,
             'trangthai' => 1
         ]);
@@ -32,6 +33,13 @@ class BinhLuanController extends Controller
     }
     public function getBLbyID(Request $request){
         $binhluan = BinhLuan::where('id_user',$request->id_user)->get();
+        return response()->json([
+    		'data' => $binhluan
+    	]);
+    }
+    public function layBinhLuan(Request $request)
+    {
+        $binhluan = BinhLuan::where('id_baiviet',$request->id_baiviet)->get();
         return response()->json([
     		'data' => $binhluan
     	]);

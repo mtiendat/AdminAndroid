@@ -54,12 +54,14 @@ class UserController extends Controller
             $hoten = $user[0]->hoten;
             $email = $user[0]->email;
             $user_name = $user[0]->username;
+            $anhdaidien = $user[0]->anhdaidien;
             return response()->json([
             'status' => 'success',
             'message' => 'Đăng nhập thành công!',
             'hoten'=>$hoten,
             'email'=>$email,
-            'user_name'=>$user_name
+            'user_name'=>$user_name,
+            'anhdaidien'=>"http://10.0.2.2:8000/image/".$anhdaidien
              ]);
         }
         return response()->json([

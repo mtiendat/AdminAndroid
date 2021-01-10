@@ -25,5 +25,6 @@ Route::get('binhluanbyid','API\BinhLuanController@getBLbyID');
 Route::post('dang-ky', 'API\UserController@dangKy');
 Route::post('dang-binhluan', 'API\BinhLuanController@postBinhLuan');
 Route::post('dang-nhap', 'API\UserController@dangNhap');
+Route::post('quenmatkhau','API\UserController@quenmatkhau');
 Route::get('timkiem', 'admin\BaiVietController@timkiem');
 Route::post('upload-image', 'API\UserController@');

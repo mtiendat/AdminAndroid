@@ -12,7 +12,7 @@ use Auth;
 class UserController extends Controller
 {
     public function dangKy(Request $request) {
-        
+
         $password=Hash::make($request->password);
         $avatar=Helper::imageUpload($request);
         $user = User::create([
@@ -37,6 +37,27 @@ class UserController extends Controller
         ]);
     }
 
+
+    public function quenmatkhau(Request $request){
+        $password=Hash::make($request->password);
+        $user = User::updated([
+            'email'     => $request->email,
+            'password'=>$password,
+            'trangthai' => 1
+        ]);
+
+        if(empty($user)){
+            return response()->json([
+                'status'=>'fail',
+                'message'=>'Thất Bại'
+            ]);
+        }
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Lấy lại mật khẩu thành công'
+        ]);
+
+    }
     public function dangNhap(Request $request) {
 
         $user = User::where('email',$request->email)->get();

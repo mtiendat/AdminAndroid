@@ -39,13 +39,13 @@ class UserController extends Controller
 
 
     public function quenmatkhau(Request $request){
-        $password=Hash::make($request->password);
-        $user = User::updated([
-            'email'     => $request->email,
-            'password'=>$password,
-            'trangthai' => 1
+           
+        $password = Hash::make($request->password);
+        $user=User::where('email',$request->email);
+        $user->update([
+            'password'  =>$password
         ]);
-
+       
         if(empty($user)){
             return response()->json([
                 'status'=>'fail',

@@ -91,4 +91,11 @@ class UserController extends Controller
         ]);
 
     }
+    public function TimKiemUser(Request $request){
+        $user = User::where('email',$request->email)->get();
+        $user[0]->anhdaidien="http://10.0.2.2:8000/image/".$user[0]->anhdaidien;
+        return response()
+        ->json([
+    		'data' => $user]);
+    }
 }

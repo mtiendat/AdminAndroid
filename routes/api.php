@@ -24,6 +24,7 @@ Route::get('binhluan','API\BinhLuanController@layBinhLuan');
 Route::get('binhluanbyid','API\BinhLuanController@getBLbyID');
 Route::post('dang-ky', 'API\UserController@dangKy');
 Route::post('dang-binhluan', 'API\BinhLuanController@postBinhLuan');
+Route::get('tim-kiem-user', 'API\UserController@TimKiemUser');
 Route::post('dang-nhap', 'API\UserController@dangNhap');
 Route::post('quenmatkhau','API\UserController@quenmatkhau');
 Route::get('timkiem', 'API\BaiVietController@timkiem');

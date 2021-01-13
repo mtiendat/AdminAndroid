@@ -45,7 +45,6 @@ class UserController extends Controller
         $user->update([
             'password'  =>$password
         ]);
-       
         if(empty($user)){
             return response()->json([
                 'status'=>'fail',
@@ -65,6 +64,11 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'fail',
                 'message' => 'Email hoặc password không chính xác!'
+            ]);
+        }else if($user[0]->trangthai==0){
+            return response()->json([
+                'status' => 'fail',
+                'message' => 'Tài khoản này bị khóa!'
             ]);
         }
         $login = [
@@ -92,7 +96,7 @@ class UserController extends Controller
 
     }
     public function TimKiemUser(Request $request){
-        $user = User::where('email',$request->email)->get();
+        $user = User::where('email',$request->email)->where('trangthai',1)->get();
         $user[0]->anhdaidien="http://10.0.2.2:8000/image/".$user[0]->anhdaidien;
         return response()
         ->json([

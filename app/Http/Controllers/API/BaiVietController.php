@@ -10,7 +10,7 @@ class BaiVietController extends Controller
     //
     public function layDanhSach(Request $request)
     {
-        $baiviets = BaiViet::where('DanhMuc',$request->danhmuc)->orderBy('id','desc')->get();
+        $baiviets = BaiViet::where('DanhMuc',$request->danhmuc)->where('trangthai',1)->orderBy('id','desc')->get();
         $dem =count($baiviets);
         for($i=0;$i<$dem;$i++)
          $baiviets[$i]->HinhAnh="http://10.0.2.2:8000/image/".$baiviets[$i]->HinhAnh;
@@ -19,15 +19,17 @@ class BaiVietController extends Controller
     	]);
     }
     public function layBaiVietID(Request $request){
-        $baiviets = BaiViet::where('id',$request->id)->get();
-        $baiviets[0]->HinhAnh="http://10.0.2.2:8000/image/".$baiviets[0]->HinhAnh;
-        
+        $baiviets = BaiViet::find($request->id);
+        $baiviets->update([
+          'LuotXem'  =>$baiviets->LuotXem+1
+        ]);
+        $baiviets->HinhAnh="http://10.0.2.2:8000/image/".$baiviets->HinhAnh;
         return response()
         ->json([
     		'data' => $baiviets]);
     }
     public function timkiem(Request $request){
-        $tieude = BaiViet::where('TieuDe','like','%'.$request->tukhoa.'%')->get();
+        $tieude = BaiViet::where('TieuDe','like','%'.$request->tukhoa.'%')->where('trangthai',1)->get();
         $tieude[0]->HinhAnh="http://10.0.2.2:8000/image/".$tieude[0]->HinhAnh;
       
         return response()

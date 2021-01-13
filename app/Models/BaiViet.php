@@ -18,6 +18,7 @@ class BaiViet extends Model
         'TieuDeHinhAnh',
         'NgayDang',
         'TacGia',
+        'LuotXem',
         'TrangThai',
     ];
 

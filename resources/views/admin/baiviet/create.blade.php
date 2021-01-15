@@ -68,6 +68,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Trạng Thái</label>
                                         <input type="text" name="TrangThai" class="form-control" placeholder="Trạng thái">
+                                
                                     </div>
                                 </div>
                             </div>

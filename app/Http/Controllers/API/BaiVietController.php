@@ -13,7 +13,7 @@ class BaiVietController extends Controller
         $baiviets = BaiViet::where('DanhMuc',$request->danhmuc)->where('trangthai',1)->orderBy('id','desc')->get();
         $dem =count($baiviets);
         for($i=0;$i<$dem;$i++)
-         $baiviets[$i]->HinhAnh="http://10.0.2.2:8000/image/".$baiviets[$i]->HinhAnh;
+         $baiviets[$i]->HinhAnh="http://192.168.42.14:8000/image/".$baiviets[$i]->HinhAnh;
         return response()->json([
     		'data' => $baiviets
     	]);
@@ -23,14 +23,14 @@ class BaiVietController extends Controller
         $baiviets->update([
           'LuotXem'  =>$baiviets->LuotXem+1
         ]);
-        $baiviets->HinhAnh="http://10.0.2.2:8000/image/".$baiviets->HinhAnh;
+        $baiviets->HinhAnh="http://192.168.42.14:8000/image/".$baiviets->HinhAnh;
         return response()
         ->json([
     		'data' => $baiviets]);
     }
     public function timkiem(Request $request){
         $tieude = BaiViet::where('TieuDe','like','%'.$request->tukhoa.'%')->where('trangthai',1)->get();
-        $tieude[0]->HinhAnh="http://10.0.2.2:8000/image/".$tieude[0]->HinhAnh;
+        $tieude[0]->HinhAnh="http://192.168.42.14:8000/image/".$tieude[0]->HinhAnh;
       
         return response()
         ->json([
@@ -47,7 +47,7 @@ class BaiVietController extends Controller
         $baiviets=BaiViet::whereIn('id', $id)->get(); //truy vấn whereIn: lấy tất cả giá trị thuộc cột id, điều kiện là 1 mang [] id truyền vào
   
         for($i=0;$i<count($baiviets);$i++)
-         $baiviets[$i]->HinhAnh="http://10.0.2.2:8000/image/".$baiviets[$i]->HinhAnh;
+         $baiviets[$i]->HinhAnh="http://192.168.42.14:8000/image/".$baiviets[$i]->HinhAnh;
         return response()->json([
     		'data' => $baiviets
     	]);

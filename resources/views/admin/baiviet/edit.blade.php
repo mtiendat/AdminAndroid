@@ -12,26 +12,26 @@
                             <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label>Tiêu Đề</label>
-                                        <input type="text" class="form-control" name="TieuDe" values="{{$baiviet->TieuDe}}" >
+                                        <input type="text" class="form-control" name="TieuDe" value="{{$baiviet->TieuDe}}" >
                                     </div>
                                 </div>
     
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label>Danh Mục </label>
-                                        <input type="text" class="form-control" name="DanhMuc" values="{{$baiviet->DanhMuc}}" />
+                                        <input type="text" class="form-control" name="DanhMuc" value="{{$baiviet->DanhMuc}}" />
                                     </div>
                                 </div>
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Mô Tả</label>
-                                        <textarea name="Gia" class="form-control" values="{{$baiviet->MoTa}}"></textarea>
+                                        <textarea name="Gia" class="form-control" value="{{$baiviet->MoTa}}"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nội Dung</label>
-                                        <textarea name="NoiDung" class="form-control" values="{{$baiviet->NoiDung}}"></textarea>
+                                        <textarea name="NoiDung" class="form-control" value="{{$baiviet->NoiDung}}"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-5 pr-1">
@@ -49,25 +49,26 @@
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Tiêu Đề Hình Ảnh</label>
-                                        <input type="text" name="TieuDeHinhAnh" class="form-control" values="{{$baiviet->TieuDeHinhAnh}}">
+                                        <input type="text" name="TieuDeHinhAnh" class="form-control" value="{{$baiviet->TieuDeHinhAnh}}">
                                     </div>
                                 </div>
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Ngày Đăng</label>
-                                        <input type="text" name="NgayDang" class="form-control" values="{{$baiviet->NgayDang}}">
+                                        <input type="text" name="NgayDang" class="form-control" value="{{$baiviet->NgayDang}}">
                                     </div>
                                 </div>
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Tác Giả</label>
-                                        <input type="text" name="TacGia" class="form-control" values="{{$baiviet->TacGia}}">
+                                        <input type="text" name="TacGia" class="form-control" value="{{$baiviet->TacGia}}">
                                     </div>
                                 </div>
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Trạng Thái</label>
-                                        <input type="text" name="TrangThai" class="form-control" values="{{$baiviet->TrangThai}}">
+                                        <input type="text" name="TrangThai" class="form-control" value="{{$baiviet->TrangThai}}">
+                                        <input type="text" hidden name="LuotXem" class="form-control" value="0">
                                     </div>
                                 </div>
                             </div>

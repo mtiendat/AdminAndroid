@@ -71,6 +71,7 @@ class  BaiVietController extends Controller
         $baiviet->HinhAnh=$this->imageUpload($request);
         $baiviet->NgayDang=$request->NgayDang;
         $baiviet->TacGia=$request->TacGia;
+        $baiviet->LuotXem = 0;
         $baiviet->TrangThai=$request->TrangThai;
         //if(Category::create($request->all()))
         if($baiviet->save())
@@ -82,8 +83,9 @@ class  BaiVietController extends Controller
         return redirect()->route('baiviet.index');
     }
 
-    public function edit(BaiViet $baiviet)
+    public function edit($id)
     {
+        $baiviet=BaiViet::find($id);
         return view($this->viewprefix.'edit')->with('baiviet', $baiviet);
     }
 
@@ -105,12 +107,13 @@ class  BaiVietController extends Controller
         'HinhAnh'=>'required',
         'TieuDeHinhAnh'=>'required',
         'NgayDang'=>'required',
+        'LuotXem'=>'required',
         'TacGia'=>'required',
         'TrangThai'=>'required',
         ]);
 
         $data['HinhAnh']=$this->imageUpload($request);
-
+        
         //if(Category::create($request->all()))
         if($baiviet->update($data))
         {

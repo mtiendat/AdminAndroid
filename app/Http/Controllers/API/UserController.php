@@ -12,7 +12,6 @@ use Auth;
 class UserController extends Controller
 {
     public function dangKy(Request $request) {
-
         $password=Hash::make($request->password);
         $avatar=Helper::imageUpload($request);
         $user = User::create([
@@ -86,7 +85,11 @@ class UserController extends Controller
             'hoten'=>$hoten,
             'email'=>$email,
             'user_name'=>$user_name,
+<<<<<<< Updated upstream
             'anhdaidien'=>"http://192.168.42.14:8000/image/".$anhdaidien
+=======
+            'anhdaidien'=>"http://192.168.42.108:8000/image/".$anhdaidien
+>>>>>>> Stashed changes
              ]);
         }
         return response()->json([
@@ -97,7 +100,11 @@ class UserController extends Controller
     }
     public function TimKiemUser(Request $request){
         $user = User::where('email',$request->email)->where('trangthai',1)->get();
+<<<<<<< Updated upstream
         $user[0]->anhdaidien="http://192.168.42.14:8000/image/".$user[0]->anhdaidien;
+=======
+        $user[0]->anhdaidien="http://192.168.42.108:8000/image/".$user[0]->anhdaidien;
+>>>>>>> Stashed changes
         return response()
         ->json([
     		'data' => $user]);
